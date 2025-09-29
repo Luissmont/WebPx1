@@ -22,6 +22,32 @@ function obtenerDatosAstronautas() {
         });
 }
 
+function mostrarResumen(total) {
+    contenedorresumenmision.innerHTML = `
+        <p class="numero_total_austero">${total}</p>
+        <p class="texto_resumen_austero">personas actualmente en el espacio.</p>
+    `;
+}
 
+function mostrarLista(gente) {
+    listaastronautas.innerHTML = '';
+
+    if (gente.length === 0) {
+        listaastronautas.innerHTML = '<p class="mensaje_carga_austero">No hay nadie en el espacio. ¡Raro!</p>';
+        return;
+    }
+
+    gente.forEach(function(persona) {
+        const tarjeta = document.createElement('div');
+        tarjeta.className = 'tarjeta_astronauta_austera';
+        
+        tarjeta.innerHTML = `
+            <h3 class="nombre_astronauta_austero">${persona.name}</h3>
+            <p class="nave_mision_austera">Nave: ${persona.craft}</p>
+        `;
+        
+        listaastronautas.appendChild(tarjeta);
+    });
+}
 
 obtenerDatosAstronautas();

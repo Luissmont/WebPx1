@@ -56,3 +56,50 @@
     background-color: #777;
 }
 
+.contenedor_resultados_austero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.mensaje_inicial {
+    width: 100%;
+    color: #9A9A9A;
+    font-style: italic;
+    padding: 50px;
+}
+
+.tarjeta_resultado_austera {
+    width: 300px;
+    background-color: #1E1E1E; 
+    border: 1px solid #333;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 0;
+    text-align: left;
+    transition: none; 
+}
+
+.miniatura_imagen_austera {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 10px;
+    border: 1px solid #444; 
+}
+
+.titulo_tarjeta_austera {
+    font-size: 1.1em;
+    color: #F0F0F0;
+    margin: 0 0 5px 0;
+}
+
+.descripcion_tarjeta_austera {
+    font-size: 0.85em;
+    color: #9A9A9A;
+    margin-bottom: 10px;
+}

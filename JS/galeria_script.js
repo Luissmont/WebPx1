@@ -12,7 +12,7 @@ function manejarBusqueda() {
         return;
     }
     
-    resultadosbusqueda.innerHTML = '<p class="mensaje_inicial">Buscando...</p>';
+    resultadosbusqueda.innerHTML = '<p class="mensaje_inicial">Buscando..</p>';
     
     obtenerDatosGaleria(terminobuscar);
 }
@@ -38,3 +38,43 @@ function obtenerDatosGaleria(query) {
         });
 }
 
+function mostrarResultados(resultados) {
+    
+    resultadosbusqueda.innerHTML = '';
+
+    if (resultados.length === 0) {
+        resultadosbusqueda.innerHTML = '<p class="mensaje_inicial">No se encontraron resultados.</p>';
+        return;
+    }
+
+    resultados.forEach(function(item) {
+        
+        const datostarjeta = item.data[0];
+        const urlminiatura = item.links ? item.links[0].href : ''; 
+        
+        const titulo = datostarjeta.title || 'Sin Título';
+        const descripcion = datostarjeta.description || 'Sin descripción.';
+        
+        const tarjeta = document.createElement('div');
+        tarjeta.className = 'tarjeta_resultado_austera';
+        
+        let html_tarjeta = `
+            <img src="${urlminiatura}" alt="${titulo}" class="miniatura_imagen_austera">
+            <div class="cuerpo_tarjeta_austera">
+                <h3 class="titulo_tarjeta_austera">${titulo}</h3>
+                <p class="descripcion_tarjeta_austera">${descripcion.substring(0, 100)}...</p>
+            </div>
+        `;
+        
+        tarjeta.innerHTML = html_tarjeta;
+        
+        resultadosbusqueda.appendChild(tarjeta);
+    });
+}
+
+botonbuscar.addEventListener('click', manejarBusqueda);
+campobusqueda.addEventListener('keypress', function(evento) {
+    if (evento.key === 'Enter') {
+        manejarBusqueda();
+    }
+});

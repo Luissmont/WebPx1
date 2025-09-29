@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Astronómica - Galería</title>
+    <link rel="stylesheet" href="../CSS/estilos.css">
+    <link rel="stylesheet" href="../CSS/galeria_estilos.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <nav class="navegacion">
+            <span class="logo_sitio">AstroMin</span>
+            <ul class="menu_enlaces">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="galeria.html" class="enlace_activo">Galería</a></li>
+                <li><a href="misiones.html">Misiones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenedor_principal">
+        <h1 class="titulo_principal">Galería Espacial</h1>
+        <p class="subtitulo">Busca imágenes y videos del archivo histórico de la NASA.</p>
+
+        <div class="buscador_austero">
+            <input type="text" id="campo_busqueda" placeholder="Ej: Luna, nebulosa, Apolo..." class="entrada_texto_austero">
+            <button id="boton_buscar" class="boton_primario_austero">Buscar</button>
+        </div>
+
+        <section id="resultados_busqueda" class="contenedor_resultados_austero">
+            <p class="mensaje_inicial">Escribe un término y haz clic en Buscar para explorar la biblioteca de la NASA.</p>
+        </section>
+
+    </main>
+
+    <script src="../JS/galeria_script.js"></script>
+</body>
+</html>
